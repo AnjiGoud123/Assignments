@@ -1,0 +1,39 @@
+
+import pandas as pd
+import numpy as np 
+from scipy import stats
+
+df = pd.read_csv("BuyerRatio.csv")
+
+obs = np.array([[50,142,131,70],[435,1523,1356,750]])
+
+X = stats.chi2_contingency(obs)
+
+p_value = X[1]
+p_value
+
+# Null hypothesis = all proportions are equal
+# Alternate hypothesis = all proportions are not equal
+
+
+if p_value < 0.05:
+    print("Reject Null hypothesis, Accept Alternative hypothesis ")
+else:
+    print("Accept Null hypothsis, Reject Alternative hypothesis")
+
+# pvalue = 0.66
+# pvalue is greater than (0.05)
+# accept Null hyposthesis
+
+
+
+
+
+
+
+
+
+
+
+
+

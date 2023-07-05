@@ -1,0 +1,38 @@
+
+import pandas as pd
+df = pd.read_csv("LabTAT.csv")
+df
+df.shape
+list(df)
+df.dtypes
+
+
+
+from scipy import stats
+stats.f_oneway(df.iloc[:,0],df.iloc[:,1],df.iloc[:,2],df.iloc[:,3])
+
+p_value =2.1156708949992414e-57
+
+if p_value < 0.05:
+    print("Reject Null Hypothesis, Accept Alternativ Hypothesis")
+else:
+    print("Accept Null Hypothesis, Reject Alternative Hypothesis")
+
+
+
+
+#pvalue is lesser than (0.05)
+# Accept Alternative hyposthesis
+# There is difference in average TAT among the different laboratories at 5% significance level
+
+
+
+
+
+
+
+
+
+
+
+

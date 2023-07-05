@@ -1,0 +1,36 @@
+
+import pandas as pd
+df = pd.read_csv("Costomer+OrderForm.csv")
+df.shape
+df
+df.dtypes
+
+df['Phillippines'].value_counts()
+df['Indonesia'].value_counts()
+df['Malta'].value_counts()
+df['India'].value_counts()
+
+import numpy as np
+obs = np.array([[271,267,269,280],[29,33,31,20]])
+
+from scipy import stats
+X = stats.chi2_contingency(obs)
+
+p_value = X[1]
+p_value
+
+#Null hypothesis = customer order forms defective % does not varies by centre
+
+
+if p_value < 0.05:
+    print("Reject Null hypothesishesis, Accept Alternative hypothesis ")
+else:
+    print("Accept Null hypothesis, Reject Alternative hypothesis")
+
+# pvalue = 0.277
+# pvalue is greater than 0.05
+# Accept Null hypothesis
+
+
+
+

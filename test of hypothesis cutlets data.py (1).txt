@@ -1,0 +1,36 @@
+
+import pandas as pd
+df = pd.read_csv("Cutlets.csv")
+df
+
+df.shape
+df.dtypes
+
+
+df["Unit A"].mean()
+df["Unit B"].mean()
+
+from scipy import stats
+zcal , pval = stats.ttest_ind(df["Unit A"],df["Unit B"])
+
+print("z calculated value is",zcal.round(4))
+print("p_value is",pval.round(4))
+
+
+
+if pval<0.05:
+    print("rejected null hypothesis,Accept alternative hypothesis")
+else:
+    print("accept null hypothesis,Reject alternative hypothesis")
+
+
+#accept null hypothesis,Reject alternative hypothesis
+   
+
+
+
+
+
+
+
+
